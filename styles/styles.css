@@ -22,6 +22,8 @@
 
 html {
   height: 100%;
+  min-width: 1280px;
+  background-color: #E5E5E5;
 }
 
 body {
@@ -59,6 +61,7 @@ body {
 
 .button {
   display: inline-block;
+  margin: 0;
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   line-height: 20px;
@@ -120,6 +123,7 @@ body {
 
 .button-selected {
   background-color: #7DB54F;
+  width: 140px;
 }
 
 .button-selected:hover {
@@ -138,16 +142,19 @@ body {
 
 .button-main-action {
   min-width: 160px;
+  max-width: 250px;
 }
 
 .button-find-hotel {
   min-width: 574px;
+  max-width: 700px;
   padding-top: 12px;
   padding-bottom: 12px;
 }
 
 .button-subscribe {
   min-width: 200px;
+  max-width: 400px;
   padding-bottom: 12px;
   padding-top: 12px;
   border-radius: 0 10px 10px 0;
@@ -156,10 +163,11 @@ body {
 .button-apply-filter {
   padding-top: 14px;
   padding-bottom: 14px;
-  min-width: 160px;
+  width: 160px;
 }
 
 .reset-button {
+  width: 160px;
   background: none;
   font-weight: 400;
   text-transform: none;
@@ -185,6 +193,7 @@ body {
 
 .img {
   max-width: 100%;
+  object-fit: contain;
 }
 
 .page-header {
@@ -203,10 +212,6 @@ body {
 
 .catalog-page .navigation-logo:hover {
   opacity: 0.8;
-}
-
-.catalog-page .navigation-logo:focus {
-  outline: 2px solid #3F5E72;
 }
 
 .catalog-page .navigation-logo:active {
@@ -251,11 +256,6 @@ body {
 
 .navigation-link:hover {
   color: #756157;
-}
-
-.navigation-link:focus {
-  box-shadow: inset 0 0 0 2px #83B3D3;
-  outline: none;
 }
 
 .navigation-link:active {
@@ -316,7 +316,6 @@ body {
   line-height: 13px;
   font-weight: 400;
   color: #FFFFFF;
-  background-color: #7DB54F;
 }
 
 .main-container {
@@ -344,6 +343,7 @@ body {
 .welcome {
   display: block;
   object-fit: contain;
+  max-width: 100%;
 }
 
 .section-title {
@@ -385,11 +385,6 @@ body {
   list-style-type: none;
 }
 
-.advantages-item:nth-child(1), .advantages-item:nth-child(2) {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .advantages-extra-list {
   display: flex;
   flex-wrap: wrap;
@@ -409,11 +404,11 @@ body {
 .advantages-extra-item {
   width: 400px;
   min-height: 384px;
-  padding: 180px 85px 80px;
+  padding: 182px 85px 80px;
   color: #333333;
   background-repeat: no-repeat;
   background-position: center 72px;
-  background-size: 84px 84px;
+  background-size: 84px;
 }
 
 .advantages-extra-item:nth-child(2n-1) {
@@ -452,12 +447,19 @@ body {
   color: #000000;
 }
 
-.advantages-item:nth-child(2n+3) p {
+.advantages-item:nth-child(2n+3):not(.illustrated-advantages-item) p {
   color: #333333;
 }
 
-.advantages-item:nth-child(2n+4) p {
+.advantages-item:nth-child(2n+4):not(.illustrated-advantages-item) p {
   color: #333333;
+}
+
+.advantages-item.illustrated-advantages-item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  padding: 0;
 }
 
 .advantages-item-title {
@@ -474,7 +476,6 @@ body {
 
 .advantages-extra-item-desc {
   margin: 0;
-  width: 230px;
 }
 
 .find-hotel {
@@ -487,7 +488,7 @@ body {
 
 .find-hotel-form-desc {
   max-width: 1000px;
-  margin: 0 0 56px 0;
+  margin: 0 0 54px 0;
   text-align: center;
 }
 
@@ -499,7 +500,7 @@ body {
 
 .newsletter-desc {
   max-width: 475px;
-  margin: 0 auto 48px;
+  margin: 0 auto 44px;
 }
 
 .newsletter-form {
@@ -511,7 +512,7 @@ body {
 .field {
   font: inherit;
   font-size: 18px;
-  line-height: 20px;
+  line-height: 21px;
   color: #000000;
   margin: 0;
   border: none;
@@ -546,13 +547,24 @@ body {
   box-shadow: inset 0 0 0 2px #83B3D3;
 }
 
+.field-error {
+  background-color: #FFFFFF;
+  box-shadow: inset 0 0 0 2px #FF5757;
+}
+
+.field-error:focus {
+  box-shadow: 0 0 0 3px #333333;
+  outline: none;
+  z-index: 1;
+}
+
 .field-subscribe {
   border-radius: 10px 0 0 10px;
   flex-grow: 1;
 }
 
 .newsletter-bg {
-  background-color: #82B3D3;
+  background-color: #333333;
   color: #FFFFFF;
   background-image: url("../images/background-subscribe.jpg");
   background-repeat: no-repeat;
@@ -571,7 +583,7 @@ body {
 .footer-social {
   display: flex;
   flex-wrap: wrap;
-  max-width: 250px;
+  width: 148px;
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -605,6 +617,10 @@ body {
 
 .footer-social-link:active {
   color: #68A2CA4C;
+}
+
+.footer-phone-wrapper {
+  max-width: 600px;
 }
 
 .footer-contacts-phone {
@@ -671,6 +687,7 @@ body {
   position: relative;
   margin: auto;
   padding: 62px 70px 70px;
+  min-width: max-content;
   background-color: #FFFFFF;
   box-shadow: 0 25px 50px #00000026;
   border-radius: 30px;
@@ -742,7 +759,7 @@ body {
 }
 
 .field-dates {
-  padding: 15px 20px;
+  padding: 14px 20px;
   width: 420px;
 }
 
@@ -791,7 +808,7 @@ body {
   line-height: 21px;
   position: absolute;
   left: 0;
-  top: 60px;
+  top: 58px;
   z-index: 1;
 }
 
@@ -846,6 +863,7 @@ body {
   color: #0000004D;
   border-radius: 4px;
   background-color: transparent;
+  position: relative;
 }
 
 .change-guests-number-button:hover {
@@ -853,12 +871,14 @@ body {
 }
 
 .change-guests-number-button:focus {
-  color: #000000;
-  background-image: url("../images/icons/border-for-change-number-button.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
   outline: none;
+}
+
+.change-guests-number-button:focus svg {
+  color: #000000;
+  box-shadow: 0 0 0 3px #82B3D3;
+  outline: none;
+  border-radius: 4px;
 }
 
 .change-guests-number-button:active {
@@ -867,12 +887,25 @@ body {
 
 .change-number-icon {
   display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
+}
+
+.minus-icon {
+  left: 9px;
+}
+
+.plus-icon {
+  right: 5px;
 }
 
 .field-guests-number {
   width: 45px;
-  padding: 15px 4px;
+  padding: 14px 4px;
   text-align: center;
   z-index: 1;
   -moz-appearance: textfield;
@@ -983,7 +1016,7 @@ body {
   padding: 35px 70px 60px;
   background-image: url("../images/background-filter.jpg");
   background-size: cover;
-  background-color: #82B3D3;
+  background-color: #333333;
   color: #FFFFFF;
   background-repeat: no-repeat;
 }
@@ -1078,7 +1111,7 @@ body {
 .catalog-filter-infrastructure,
 .catalog-filter-accommodation {
   display: flex;
-  min-width: 160px;
+  width: 160px;
   flex-direction: column;
   margin-right: 60px;
 }
@@ -1288,7 +1321,7 @@ body {
 }
 
 .catalog-hotels {
-  padding: 55px 70px 25px;
+  padding: 55px 72px 25px;
 }
 
 .control-input {
@@ -1307,6 +1340,7 @@ body {
 .total-hotels-number {
   margin: 0 30px 0 0;
   max-width: 450px;
+  text-align: left;
 }
 
 .select-control {
@@ -1318,6 +1352,7 @@ body {
   border-radius: 4px;
   border: none;
   box-shadow: inset 0 0 0 2px #E5E5E5;
+  -webkit-appearance: none;
   appearance: none;
   background-color: #FFFFFF;
   background-image: url("../images/icons/select-arrow.svg");
@@ -1345,13 +1380,15 @@ body {
 
 .hotels-sorting {
   width: 290px;
+  margin-right: 78px;
   margin-left: auto;
 }
 
 .results-view-wrapper {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 78px;
+  max-width: 300px;
+  justify-content: flex-end;
 }
 
 .results-view-link {
@@ -1435,9 +1472,18 @@ body {
   color: inherit;
 }
 
+.hotel-card-link:hover {
+  opacity: 0.7;
+}
+
+.hotel-card-link:active {
+  opacity: 0.5;
+}
+
 .hotel-card-image {
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hotel-card-title {
@@ -1461,6 +1507,7 @@ body {
 }
 
 .hotel-rating {
+  width: 140px;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
@@ -1468,7 +1515,7 @@ body {
   justify-self: center;
   background-color: #F2F2F2;
   border-radius: 4px;
-  padding: 8px 22px;
+  padding: 9px 22px 8px 23px;
 }
 
 .pagination-wrapper {
@@ -1477,21 +1524,23 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 66px;
-  padding-top: 30px;
+  padding-top: 29px;
   box-shadow: inset 0 1px 0 0 #E6E6E6;
 }
 
 .pagination {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
+  margin: 0 60px 0 0;
   padding: 0;
+  max-width: 600px;
   list-style-type: none;
 }
 
 .pagination-link {
   display: block;
-  width: 60px;
+  min-width: 60px;
+  max-width: 200px;
   padding-bottom: 12px;
   padding-top: 12px;
 }
@@ -1531,7 +1580,8 @@ body {
 }
 
 .select-control-label {
-  margin-right: 50px;
+  margin-right: 52px;
+  margin-top: 5px;
   font-size: 18px;
   line-height: 21px;
 }
